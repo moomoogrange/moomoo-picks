@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>무무목장 장바구니</title>
+<meta name="description" content="해발 1,000m 태백 무무목장에서 A2 저지 우유로 만드는 우유, 그릭요거트, 자연치즈, 버터와 한 주 밥상.">
+<meta property="og:title" content="무무목장 장바구니">
+<meta property="og:description" content="해발 1,000m 무무목장이 매일 만드는 것들">
+<meta property="og:image" content="img/pasture.jpg">
+<link rel="icon" href="img/logo.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{--cream:#F4F1EA;--card:#FBF9F4;--gold:#F0E2C2;--moss:#3E4E32;--char:#2C2520;--jersey:#C28B5C;--line:#E2D9C8;--sub:#6b6158}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{background:var(--cream);color:var(--char);font-family:Pretendard,sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:520px;margin:0 auto;padding:0 18px 40px}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--jersey)}
+
+/* 첫 화면 */
+.hero{position:relative;height:230px;margin:0 -18px;background:url(img/pasture.jpg) center 60%/cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,var(--cream) 100%)}
+.intro{position:relative;margin-top:-34px;display:flex;gap:14px;align-items:flex-end}
+.intro img{width:84px;height:84px;border-radius:50%;background:var(--cream);border:3px solid var(--cream);flex:none}
+h1{font-family:'Noto Serif KR',serif;font-size:27px;line-height:1.3;color:var(--moss);letter-spacing:-.02em;margin-top:18px}
+h1 span{color:var(--jersey)}
+.lead{font-size:15.5px;line-height:1.7;color:var(--sub);margin-top:12px}
+.lead b{color:var(--char)}
+.facts{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.facts span{font-size:12.5px;font-weight:600;color:var(--moss);background:#E6EBDD;border-radius:20px;padding:4px 10px}
+
+.btn{display:block;text-align:center;border-radius:12px;padding:15px 12px;font-weight:700;font-size:16px;margin-top:10px}
+.btn.main{background:var(--moss);color:#fff;margin-top:22px}
+.btn.main small{display:block;font-weight:500;font-size:12.5px;opacity:.8;margin-top:3px}
+.btn.sub{background:var(--card);border:1px solid var(--line);color:var(--moss)}
+
+/* 분류 */
+.chips{position:sticky;top:0;z-index:5;background:var(--cream);margin:26px -18px 0;padding:10px 18px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--line)}
+.chips::-webkit-scrollbar{display:none}
+.chips a{flex:none;font-size:14px;font-weight:600;padding:7px 14px;border-radius:20px;border:1px solid var(--line);background:var(--card);color:var(--sub)}
+.chips a:first-child{background:var(--moss);color:#fff;border-color:var(--moss)}
+
+section{margin-top:34px}
+h2{font-family:'Noto Serif KR',serif;font-size:21px;color:var(--char);letter-spacing:-.02em}
+.sec-sub{font-size:14px;color:var(--sub);margin-top:5px;line-height:1.6}
+
+/* 제품 카드 */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.card .body{padding:12px 12px 10px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:15.5px;font-weight:700;line-height:1.4}
+.card p{font-size:13px;color:var(--sub);line-height:1.55;margin-top:5px}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.tags span{font-size:11.5px;color:var(--moss);border:1px solid #cfd8c3;border-radius:6px;padding:1px 6px}
+.go{margin-top:auto;padding-top:12px;font-size:13px;color:var(--sub);display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:12px;padding-top:9px}
+.go::after{content:"↗"}
+
+/* 한 주 밥상 */
+.weekly{display:block;margin-top:14px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.weekly img{width:100%;display:block}
+.weekly div{padding:12px 14px;font-size:14px;color:var(--sub);line-height:1.6}
+.weekly b{color:var(--moss)}
+
+/* 레시피 */
+.recipe{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-top:12px;display:flex;overflow:hidden}
+.recipe img{width:112px;object-fit:cover;flex:none}
+.recipe .body{padding:13px 14px}
+.recipe h3{font-size:16px;font-weight:700;color:var(--moss)}
+.recipe ol{margin-top:6px;padding-left:18px;font-size:13.5px;line-height:1.65;color:var(--char)}
+
+.note{margin-top:34px;background:var(--gold);border-radius:14px;padding:16px 18px;font-size:14px;line-height:1.7}
+.note b{color:var(--moss)}
+footer{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;line-height:1.7;color:#8a7f73}
+footer a{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero" role="img" aria-label="해발 1,000m 초지에서 풀을 뜯는 저지 젖소"></div>
+  <div class="intro">
+    <img src="img/logo.png" alt="MooMoo Milk 로고">
+    <div class="eyebrow">TAEBAEK 1,000M<br>SINCE 1966</div>
+  </div>
+
+  <h1>해발 1,000m <span>무무목장</span>이<br>매일 만드는 것들</h1>
+  <p class="lead">태백 삼수령 초지에서 풀을 뜯는 저지 젖소의 우유로 만듭니다. <b>우유, 그릭요거트, 자연치즈, 버터</b> 네 가지입니다. 저희 가족이 매일 먹는 것들이라 무엇을 넣고 무엇을 빼는지 그대로 적어 두었습니다.</p>
+  <div class="facts"><span>A2 저지 원유</span><span>63℃ 30분 저온살균</span><span>균질화 안 함</span><span>무가당 무첨가</span></div>
+
+  <a class="btn main" href="https://smartstore.naver.com/moomooranch" target="_blank" rel="noopener">스마트스토어에서 주문하기<small>네이버 정기구독으로 받는 주기를 정할 수 있어요</small></a>
+  <a class="btn sub" href="https://www.instagram.com/moomoo_ranch/" target="_blank" rel="noopener">목장 소식은 인스타그램에서</a>
+
+  <nav class="chips" aria-label="분류">
+    <a href="#daily">매일 먹는 것</a>
+    <a href="#bake">굽고 바르는 것</a>
+    <a href="#weekly">한 주 밥상</a>
+    <a href="#recipe">목장 레시피</a>
+  </nav>
+
+  <section id="daily">
+    <h2>매일 먹는 것</h2>
+    <p class="sec-sub">아침에 짠 우유를 그날 병에 담습니다.</p>
+    <div class="grid">
+      <a class="card" href="https://smartstore.naver.com/moomooranch" target="_blank" rel="noopener">
+        <img src="img/milk.jpg" alt="유리잔에 담긴 무무목장 우유" loading="lazy">
+        <div class="body">
+          <h3>무무목장 우유</h3>
+          <p>병 위에 노란 크림이 뜨는 비균질 우유. 1L</p>
+          <div class="tags"><span>A2 저지</span><span>63℃ 30분</span></div>
+          <span class="go">바로가기</span>
+        </div>
+      </a>
+      <a class="card" href="https://smartstore.naver.com/moomooranch" target="_blank" rel="noopener">
+        <img src="img/greek.jpg" alt="그릇에 담은 무무목장 그릭요거트" loading="lazy">
+        <div class="body">
+          <h3>무무목장 그릭요거트</h3>
+          <p>유청을 빼서 꾸덕하게 만든 무가당 요거트. 250g</p>
+          <div class="tags"><span>무가당</span><span>원유 99%</span></div>
+          <span class="go">바로가기</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="bake">
+    <h2>굽고 바르는 것</h2>
+    <p class="sec-sub">같은 우유로 만든 치즈와 버터입니다.</p>
+    <div class="grid">
+      <a class="card" href="https://smartstore.naver.com/moomooranch" target="_blank" rel="noopener">
+        <img src="img/cheese.jpg" alt="포크로 집은 무무 자연치즈" loading="lazy">
+        <div class="body">
+          <h3>무무 자연치즈</h3>
+          <p>팬에 구워도 녹지 않고 겉만 노릇해지는 치즈. 100g</p>
+          <div class="tags"><span>구워 먹는 치즈</span><span>A2 저지</span></div>
+          <span class="go">바로가기</span>
+        </div>
+      </a>
+      <a class="card" href="https://smartstore.naver.com/moomooranch" target="_blank" rel="noopener">
+        <img src="img/butter.jpg" alt="접시 위 무무 수제버터" loading="lazy">
+        <div class="body">
+          <h3>무무 수제버터</h3>
+          <p>크림을 발효시켜 만든 무염 버터. 100g</p>
+          <div class="tags"><span>발효버터</span><span>무염</span></div>
+          <span class="go">바로가기</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="weekly">
+    <h2>한 주 밥상</h2>
+    <p class="sec-sub">영양제 대신 밥상으로 칼슘을 채우는 한 주 식단입니다.</p>
+    <a class="weekly" href="https://www.instagram.com/p/DenSZd_k4Wt/" target="_blank" rel="noopener">
+      <img src="img/weekly-2026-10.jpg" alt="우유로 채우는 한 주 칼슘 밥상과 걷기 식단표" loading="lazy">
+      <div><b>매일 기본</b> 우유 2잔, 그릭요거트 1개, 자연치즈 1조각이면 칼슘 약 740mg. 나머지는 두부, 멸치, 깻잎으로 채웁니다. 이미지를 누르면 인스타그램 게시물로 갑니다.</div>
+    </a>
+  </section>
+
+  <section id="recipe">
+    <h2>목장 레시피</h2>
+    <p class="sec-sub">5분이면 되는 것만 골랐습니다.</p>
+    <div class="recipe">
+      <img src="img/cheese-slices.jpg" alt="썰어 둔 자연치즈" loading="lazy">
+      <div class="body">
+        <h3>자연치즈 구이</h3>
+        <ol>
+          <li>치즈를 1cm 두께로 썹니다.</li>
+          <li>기름 없이 중불로 달군 팬에 올립니다.</li>
+          <li>한 면에 2~3분, 노릇해지면 뒤집습니다.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="recipe">
+      <img src="img/greek-bowl.jpg" alt="통에 담긴 그릭요거트" loading="lazy">
+      <div class="body">
+        <h3>그릭요거트 아침 그릇</h3>
+        <ol>
+          <li>그릭요거트 3~4큰술을 그릇에 폅니다.</li>
+          <li>제철 과일을 썰어 올립니다.</li>
+          <li>견과류를 뿌리고 꿀을 조금 두릅니다.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <div class="note"><b>받는 날이 안 맞으신가요?</b> 해지하지 않으셔도 됩니다. 네이버 정기구독 관리에서 주기를 바꾸거나 한 번 건너뛸 수 있어요. 어려우시면 스마트스토어 톡톡으로 말씀해 주세요.</div>
+
+  <footer>
+    무무목장우유 · 농업회사법인 삼수령목장테마공원㈜<br>
+    강원특별자치도 태백시 매봉산길 61<br>
+    <a href="https://www.instagram.com/moomoo_ranch/" target="_blank" rel="noopener">@moomoo_ranch</a> · © 2026 MooMoo Ranch
+  </footer>
+</div>
+</body>
+</html>
