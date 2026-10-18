@@ -60,6 +60,16 @@ h2{font-family:'Noto Serif KR',serif;font-size:21px;color:var(--char);letter-spa
 .go::after{content:"↗"}
 
 /* 한 주 밥상 */
+.pair{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-top:12px;padding:14px}
+.pair h3{font-size:16px;font-weight:700}
+.pair>p{font-size:13.5px;color:var(--sub);line-height:1.6;margin-top:4px}
+.pair ul{list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:8px}
+.pair li a{display:flex;align-items:center;gap:10px;padding:6px;border-radius:10px;background:var(--cream)}
+.pair li img{width:56px;height:56px;border-radius:8px;object-fit:cover;flex:none}
+.pair li b{display:block;font-size:14px;line-height:1.35}
+.pair li small{font-size:12px;color:var(--sub)}
+.pair li .brand{font-size:11px;font-weight:700;color:var(--jersey);letter-spacing:.04em}
+.pair li a::after{content:"›";margin-left:auto;padding-right:6px;color:var(--sub);font-size:18px}
 .weekly{display:block;margin-top:14px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
 .weekly img{width:100%;display:block}
 .weekly div{padding:12px 14px;font-size:14px;color:var(--sub);line-height:1.6}
@@ -97,6 +107,7 @@ footer a{text-decoration:underline}
   <nav class="chips" aria-label="분류">
     <a href="#daily">매일 먹는 것</a>
     <a href="#bake">굽고 바르는 것</a>
+    <a href="#pair">같이 먹으면 좋은 것</a>
     <a href="#weekly">한 주 밥상</a>
     <a href="#recipe">목장 레시피</a>
   </nav>
@@ -105,7 +116,7 @@ footer a{text-decoration:underline}
     <h2>매일 먹는 것</h2>
     <p class="sec-sub">아침에 짠 우유를 그날 병에 담습니다.</p>
     <div class="grid">
-      <a class="card" href="https://smartstore.naver.com/moomooranch" target="_blank" rel="noopener">
+      <a class="card" href="https://smartstore.naver.com/moomooranch/search?q=%EC%9A%B0%EC%9C%A0" target="_blank" rel="noopener">
         <img src="img/milk.jpg" alt="유리잔에 담긴 무무목장 우유" loading="lazy">
         <div class="body">
           <h3>무무목장 우유</h3>
@@ -114,7 +125,7 @@ footer a{text-decoration:underline}
           <span class="go">바로가기</span>
         </div>
       </a>
-      <a class="card" href="https://smartstore.naver.com/moomooranch" target="_blank" rel="noopener">
+      <a class="card" href="https://smartstore.naver.com/moomooranch/search?q=%EA%B7%B8%EB%A6%AD%EC%9A%94%EA%B1%B0%ED%8A%B8" target="_blank" rel="noopener">
         <img src="img/greek.jpg" alt="그릇에 담은 무무목장 그릭요거트" loading="lazy">
         <div class="body">
           <h3>무무목장 그릭요거트</h3>
@@ -130,7 +141,7 @@ footer a{text-decoration:underline}
     <h2>굽고 바르는 것</h2>
     <p class="sec-sub">같은 우유로 만든 치즈와 버터입니다.</p>
     <div class="grid">
-      <a class="card" href="https://smartstore.naver.com/moomooranch" target="_blank" rel="noopener">
+      <a class="card" href="https://smartstore.naver.com/moomooranch/search?q=%EC%9E%90%EC%97%B0%EC%B9%98%EC%A6%88" target="_blank" rel="noopener">
         <img src="img/cheese.jpg" alt="포크로 집은 무무 자연치즈" loading="lazy">
         <div class="body">
           <h3>무무 자연치즈</h3>
@@ -139,7 +150,7 @@ footer a{text-decoration:underline}
           <span class="go">바로가기</span>
         </div>
       </a>
-      <a class="card" href="https://smartstore.naver.com/moomooranch" target="_blank" rel="noopener">
+      <a class="card" href="https://smartstore.naver.com/moomooranch/search?q=%EB%B2%84%ED%84%B0" target="_blank" rel="noopener">
         <img src="img/butter.jpg" alt="접시 위 무무 수제버터" loading="lazy">
         <div class="body">
           <h3>무무 수제버터</h3>
@@ -148,6 +159,53 @@ footer a{text-decoration:underline}
           <span class="go">바로가기</span>
         </div>
       </a>
+      <a class="card" href="https://smartstore.naver.com/moomooranch/search?q=%EA%B8%B0%EB%B2%84%ED%84%B0" target="_blank" rel="noopener">
+        <img src="img/ghee.jpg" alt="유리병에 담긴 무무 기버터" loading="lazy">
+        <div class="body">
+          <h3>무무 기버터</h3>
+          <p>수제 발효버터를 약불에 끓여 유지방만 남긴 버터. 센 불에도 잘 타지 않아요. 100g</p>
+          <div class="tags"><span>굽는 기름</span><span>무염</span></div>
+          <span class="go">바로가기</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="pair">
+    <h2>같이 먹으면 좋은 것</h2>
+    <p class="sec-sub">뜻이 같은 생산자들의 먹거리와 엮었습니다. 다른 브랜드 상품은 각 브랜드 스토어에서 주문합니다.</p>
+    <div class="pair">
+      <h3>비프칩 기버터 밥</h3>
+      <p>따뜻한 밥에 기버터 한 숟가락을 녹이고, 비프칩을 손으로 찢어 올린 뒤 간장 몇 방울. 풀 먹은 소고기와 풀 먹은 소의 버터입니다.</p>
+      <ul>
+        <li><a href="https://heygreens.co.kr/product/detail.html?product_no=262" target="_blank" rel="noopener"><img src="img/partner/hg-beefchip.jpg" alt="풀만먹은소 비프칩" loading="lazy"><span><span class="brand">HEYGREENS</span><b>풀만먹은소 비프칩</b><small>호주산 목초우 · 무가당</small></span></a></li>
+        <li><a href="https://smartstore.naver.com/moomooranch/search?q=%EA%B8%B0%EB%B2%84%ED%84%B0" target="_blank" rel="noopener"><img src="img/ghee.jpg" alt="무무 기버터" loading="lazy"><span><span class="brand">MOOMOO</span><b>무무 기버터</b><small>발효버터로 만든 기버터</small></span></a></li>
+      </ul>
+    </div>
+    <div class="pair">
+      <h3>스테이크 굽는 날</h3>
+      <p>팬을 세게 달구고 기버터를 두릅니다. 버터처럼 검게 타지 않아 겉이 고르게 갈색으로 익어요.</p>
+      <ul>
+        <li><a href="https://heygreens.co.kr/product/detail.html?product_no=234" target="_blank" rel="noopener"><img src="img/partner/hg-steak.jpg" alt="풀만먹은소 안심 스테이크" loading="lazy"><span><span class="brand">HEYGREENS</span><b>풀만먹은소 안심 스테이크</b><small>호주산 목초우 · 200g</small></span></a></li>
+        <li><a href="https://smartstore.naver.com/moomooranch/search?q=%EA%B8%B0%EB%B2%84%ED%84%B0" target="_blank" rel="noopener"><img src="img/ghee.jpg" alt="무무 기버터" loading="lazy"><span><span class="brand">MOOMOO</span><b>무무 기버터</b><small>센 불 구이용</small></span></a></li>
+      </ul>
+    </div>
+    <div class="pair">
+      <h3>짭짤한 간식 접시</h3>
+      <p>노릇하게 구운 자연치즈 옆에 비프칩을 곁들이면 단 것 없이 든든한 간식이 됩니다.</p>
+      <ul>
+        <li><a href="https://heygreens.co.kr/product/detail.html?product_no=262" target="_blank" rel="noopener"><img src="img/partner/hg-beefchip.jpg" alt="풀만먹은소 비프칩" loading="lazy"><span><span class="brand">HEYGREENS</span><b>풀만먹은소 비프칩</b><small>당류 0g</small></span></a></li>
+        <li><a href="https://smartstore.naver.com/moomooranch/search?q=%EC%9E%90%EC%97%B0%EC%B9%98%EC%A6%88" target="_blank" rel="noopener"><img src="img/cheese.jpg" alt="무무 자연치즈" loading="lazy"><span><span class="brand">MOOMOO</span><b>무무 자연치즈</b><small>구워 먹는 치즈</small></span></a></li>
+      </ul>
+    </div>
+    <div class="pair">
+      <h3>주말 브런치</h3>
+      <p>사워도우를 구워 수제버터를 바르고, 바삭하게 구운 베이컨을 올립니다.</p>
+      <ul>
+        <li><a href="https://smartstore.naver.com/main/products/11795617155" target="_blank" rel="noopener"><img src="img/partner/daily-sourdough.jpg" alt="사워도우 빵 대형" loading="lazy"><span><span class="brand">일용할 브레드</span><b>사워도우 빵 대형</b><small>슬라이스 선택 가능</small></span></a></li>
+        <li><a href="https://heygreens.co.kr/product/detail.html?product_no=278" target="_blank" rel="noopener"><img src="img/partner/hg-bacon.jpg" alt="에코리프 포크 베이컨" loading="lazy"><span><span class="brand">HEYGREENS</span><b>에코리프 포크 베이컨</b><small>150g</small></span></a></li>
+        <li><a href="https://smartstore.naver.com/moomooranch/search?q=%EB%B2%84%ED%84%B0" target="_blank" rel="noopener"><img src="img/butter.jpg" alt="무무 수제버터" loading="lazy"><span><span class="brand">MOOMOO</span><b>무무 수제버터</b><small>발효 무염 버터</small></span></a></li>
+      </ul>
     </div>
   </section>
 
